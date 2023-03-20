@@ -1,0 +1,68 @@
+﻿<Window x:Class="WpfCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfCalculator"
+        mc:Ignorable="d"
+        WindowStyle="ThreeDBorderWindow" 
+        Background="Transparent"
+        Height="700" Width="400" MinHeight="700" MinWidth="400"
+        ResizeMode="CanResize"
+        Title="Calculator">
+    <Border>
+        <Grid>
+            <!--#region Layout -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+            <!--#region expression value output -->
+            <DockPanel  Grid.Row="0" 
+                        Grid.ColumnSpan="4" 
+                        Background="#CCCCCC"
+                        LastChildFill="True">
+
+                <TextBlock 
+                    Name="DisplayExpression"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Margin="20"
+                    FontSize="40"/>
+            </DockPanel>
+            <!--#endregion-->
+            <!--#region buttons-->
+            <Button Name="BtnAC" Grid.Row="1" Background="#888888" FontSize="35" Content="AC" Click="AllClear"/>
+            <Button Name="BtnSign" Grid.Row="1" Grid.Column="1" Background="#888888" FontSize="35" Content="+/-" Click="ButtonChangeSign"/>
+            <Button Name="BtnPercent" Grid.Row="1" Grid.Column="2" Background="#888888" FontSize="35" Content="%" Click="ButtonPercent"/>
+            <Button Name="Btn7" Tag="7" Grid.Row="2" Grid.Column="0" Background="LightGray" FontSize="35" Content="7" Click="ButtonNum"/>
+            <Button Name="Btn8" Tag="8" Grid.Row="2" Grid.Column="1" Background="LightGray" FontSize="35" Content="8" Click="ButtonNum"/>
+            <Button Name="Btn9" Tag="9" Grid.Row="2" Grid.Column="2" Background="LightGray" FontSize="35" Content="9" Click="ButtonNum"/>
+            <Button Name="Btn4" Tag="4" Grid.Row="3" Grid.Column="0" Background="LightGray" FontSize="35" Content="4" Click="ButtonNum"/>
+            <Button Name="Btn5" Tag="5" Grid.Row="3" Grid.Column="1" Background="LightGray" FontSize="35" Content="5" Click="ButtonNum"/>
+            <Button Name="Btn6" Tag="6" Grid.Row="3" Grid.Column="2" Background="LightGray" FontSize="35" Content="6" Click="ButtonNum"/>
+            <Button Name="Btn3" Tag="3" Grid.Row="4" Grid.Column="0" Background="LightGray" FontSize="35" Content="3" Click="ButtonNum"/>
+            <Button Name="Btn2" Tag="2" Grid.Row="4" Grid.Column="1" Background="LightGray" FontSize="35" Content="2" Click="ButtonNum"/>
+            <Button Name="Btn1" Tag="1" Grid.Row="4" Grid.Column="2" Background="LightGray" FontSize="35" Content="1" Click="ButtonNum"/>
+            <Button Name="Btn0" Tag="0" Grid.Row="5" Grid.Column="0" Background="LightGray" FontSize="35" Content="0" Grid.ColumnSpan="2" Click="Button0"/>
+            <Button Name="BtnDot" Grid.Row="5" Grid.Column="2" Background="LightGray" FontSize="35" Content="." Click="ButtonDot"/>
+            <Button Name="BtnDiv" Grid.Row="1" Grid.Column="3" Background="Orange" FontSize="35" Content="÷" Click="ButtonDiv"/>
+            <Button Name="BtnMul" Grid.Row="2" Grid.Column="3" Background="Orange" FontSize="35" Content="×" Click="ButtonMul"/>
+            <Button Name="BtnSub" Grid.Row="3" Grid.Column="3" Background="Orange" FontSize="35" Content="-" Click="ButtonSub"/>
+            <Button Name="BtnAdd" Grid.Row="4" Grid.Column="3" Background="Orange" FontSize="35" Content="+" Click="ButtonAdd"/>
+            <Button Name="BtnEq" Grid.Row="5" Grid.Column="3" Background="Orange" FontSize="35" Content="=" Click="ButtonEqual"/>
+            <!--#endregion-->
+        </Grid>
+    </Border>
+</Window>
